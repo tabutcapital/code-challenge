@@ -16,6 +16,13 @@ SPEED DETECTOR
 The program takes a car's current speed as input and prints relevant details as required.
 
 NET SALARY CALCULATOR
-This program's major task is to compute net salary given an example of salary as 50000.
+This program's major task is to compute net salary.
 It takes reference from the following external link: 
 - https://www.aren.co.ke/payroll/taxrates.htm 
+It uses Readline to create an interface for testing on the terminal.
+It takes three functions:
+ - for calculating NetSalary
+ - for calculating Tax (PAYE)
+ - for calculating NHIF
+Math.min returns the smaller of a set of supplied numeric expressions.
+Number is an object that represents a number of any kind

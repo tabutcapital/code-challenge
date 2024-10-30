@@ -1,15 +1,30 @@
-function calculatespeed() {
-    const speedLimit = 70
-    if (speed < 70) {
-      speed  = 'Ok';
+ 
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+function checkSpeed(speed) {
+    const speedLimit = 70;
+    const kmPerDemeritPoint = 5;
+
+    if (speed < speedLimit) {
+        console.log("Ok");
     } else {
-      points = (speed - speedLimit / 5);
-     if (points > 12) {
-        console.log('License suspended');
-    } if ( speed === 80) {
-        console.log('Points: 2');
-        
+        const demeritPoints = Math.floor((speed - speedLimit) / kmPerDemeritPoint);
+        if (demeritPoints > 12) {
+            console.log("License suspended");
+        } else {
+            console.log(`Points: ${demeritPoints}`);
+        }
     }
 }
-    
-} 
+
+
+rl.question("Enter the speed of the car: ", (speed) => {
+    checkSpeed(parseFloat(speed));
+    rl.close();
+});
